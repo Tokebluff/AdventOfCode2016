@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Day1
+namespace Advent_of_code_2016
 {
-    class Program
+    public static class Day1
     {
         public const int NORTH = 0;
         public const int EAST = 1;
         public const int SOUTH = 2;
         public const int WEST = 3;
-        static void Main(string[] args)
+        public static void Run()
         {
-            var inputFile = File.ReadAllLines(Environment.CurrentDirectory + "/input.txt")[0];
+            var inputFile = File.ReadAllText(Environment.CurrentDirectory + "/inputs/inputDay1.txt");
             var direction = NORTH;
 
             int[,] matrix = new int[1000, 1000];
@@ -24,7 +20,7 @@ namespace Day1
 
             int part2i = 0;
             int part2j = 0;
-            
+
             var foundPart2 = false;
 
             var inputArray = inputFile.Split(new string[] { ", " }, StringSplitOptions.None);
@@ -92,7 +88,7 @@ namespace Day1
                         break;
                 }
             }
-            if(!foundPart2)
+            if (!foundPart2)
             {
                 part2i = part1i;
                 part2j = part1j;

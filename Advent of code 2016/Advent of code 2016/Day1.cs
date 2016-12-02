@@ -95,7 +95,6 @@ namespace Advent_of_code_2016
             }
             Console.WriteLine("Part 1: " + (Math.Abs(part1i - 500) + Math.Abs(part1j - 500)));
             Console.WriteLine("Part 2: " + (Math.Abs(part2i - 500) + Math.Abs(part2j - 500)));
-            Console.ReadLine();
         }
     }
 }

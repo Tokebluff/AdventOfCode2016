@@ -7,7 +7,6 @@ namespace Advent_of_code_2016
 {
     public static class Day3
     {
-
         public static void Run()
         {
             Console.Write("Part 1: ");
@@ -23,12 +22,10 @@ namespace Advent_of_code_2016
             Regex regex = new Regex("[ ]{2,}", options);
             foreach (var line in inputs)
             {
-                var sides = regex.Replace(line.Trim(), " ").Split(' ');
-                c = CheckTriangle(c, sides[0], sides[1], sides[2]);
-                
+                var sides = Array.ConvertAll(regex.Replace(line.Trim(), " ").Split(' '), s => int.Parse(s));
+                c = ((sides[0] + sides[1] > sides[2]) && (sides[0] + sides[2] > sides[1]) && (sides[1] + sides[2] > sides[0])) ? c + 1 : c;
             }
             Console.WriteLine(c);
-            
         }
         static List<string> GetInputListPart2()
         {
@@ -46,18 +43,6 @@ namespace Advent_of_code_2016
                 newInputs.Add(line1[2] + " " + line2[2] + " " + line3[2]);
             }
             return newInputs;
-
-        }
-        static int CheckTriangle(int c, string side1, string side2, string side3)
-        {
-            var sideI1 = Convert.ToInt32(side1);
-            var sideI2 = Convert.ToInt32(side2);
-            var sideI3 = Convert.ToInt32(side3);
-            if ((sideI1 + sideI2 > sideI3) && (sideI1 + sideI3 > sideI2) && (sideI2 + sideI3 > sideI1))
-            {
-                c++;
-            }
-            return c;
         }
     }
 }

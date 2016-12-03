@@ -10,13 +10,13 @@ namespace Advent_of_code_2016
         public static void Run()
         {
             Console.Write("Part 1: ");
-            RunPart(false);
-            Console.Write("Part 2: ");
             RunPart(true);
+            Console.Write("Part 2: ");
+            RunPart(false);
         }
-        static void RunPart(bool part2)
+        static void RunPart(bool part1)
         {
-            var inputs = !part2 ? File.ReadAllLines(Environment.CurrentDirectory + "/inputs/inputDay3.txt") : GetInputListPart2().ToArray();
+            var inputs = part1 ? File.ReadAllLines(Environment.CurrentDirectory + "/inputs/inputDay3.txt") : GetInputListPart2().ToArray();
             var c = 0;
             RegexOptions options = RegexOptions.None;
             Regex regex = new Regex("[ ]{2,}", options);

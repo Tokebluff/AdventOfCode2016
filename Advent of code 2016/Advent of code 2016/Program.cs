@@ -10,7 +10,7 @@ namespace Advent_of_code_2016
     {
         static void Main(string[] args)
         {
-            Day6.Run();
+            Day6_reddit.Run();
             Console.ReadLine();
 
         }

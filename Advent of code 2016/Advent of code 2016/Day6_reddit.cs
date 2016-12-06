@@ -7,6 +7,9 @@ namespace Advent_of_code_2016
 {
     public static class Day6_reddit
     {
+        /*
+            from user /u/keekmiks
+        */
         public static void Run()
         {
             var s = Transpose(File.ReadLines(Environment.CurrentDirectory + "/inputs/inputDay6.txt")).Select(c => c.GroupBy(l => l).OrderBy(g => g.Count()).Select(g => g.Key));

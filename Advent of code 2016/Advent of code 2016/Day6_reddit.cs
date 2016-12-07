@@ -17,6 +17,6 @@ namespace Advent_of_code_2016
             Console.WriteLine(string.Concat(s.Select(c => c.First()))); //B
         }
         private static IEnumerable<IEnumerable<T>> Transpose<T>(IEnumerable<IEnumerable<T>> input) =>
-            Enumerable.Range(0, input.First().Count()).Select(i => input.Select(l => l.ElementAt(i)))
+            Enumerable.Range(0, input.First().Count()).Select(i => input.Select(l => l.ElementAt(i)));
     }
 }
